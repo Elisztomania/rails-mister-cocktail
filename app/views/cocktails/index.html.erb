@@ -5,14 +5,20 @@
 </div>
 
     <% @cocktails.each do |cocktail| %>
-    <ul>
-      <li>
-        <%= link_to cocktail.name, cocktail %>
-        <%= link_to '👁', cocktail %>
-       </li>
-    </ul>
+    <% if cocktail.photo.attached? %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+      <ul>
+        <li>
+          <%= link_to cocktail.name, cocktail %>
+          <%= link_to '👁', cocktail %>
+        </li>
+      </ul>
+    </div>
+    <% end %>
+
     <% end %>
 
 <br>
 
 <%= link_to 'Create a new cocktail', new_cocktail_path %>
+

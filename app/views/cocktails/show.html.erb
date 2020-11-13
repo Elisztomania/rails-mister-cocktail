@@ -1,6 +1,10 @@
 <h1><%= @cocktail.name %></h1>
 
-<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<% if @cocktail.photo.attached? %>
+  <hr>
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+  <hr>
+<% end %>
 
 <p>Name: <%= @cocktail.name %></p>
 <br>
@@ -17,3 +21,5 @@
 <%= link_to 'Add a dose',  new_cocktail_dose_path(@cocktail) %>
 <br>
 <%= link_to 'Back', cocktails_path %>
+
+
