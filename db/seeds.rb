@@ -10,6 +10,7 @@ require 'open-uri'
 
 puts 'Cleaning database...'
 Ingredient.destroy_all
+Cocktail.destroy_all
 
 # lemon = { name: "lemon" }
 # ice = { name: "ice" }
