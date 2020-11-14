@@ -1,13 +1,16 @@
+<%= render 'navbar', cocktail: @cocktail %>
+
 <div class="container">
   <h1>New cocktails</h1>
 
+<div class="formulaire">
 <div class="col-6 offset-3">
   <%= simple_form_for @cocktail do |f| %>
     <%= f.input :name %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit 'Ajouter', class: 'btn btn-primary btn-block' %>
+    <%= f.submit 'Ajouter', class: "btn btn-ghost" %>
   <% end %>
-  <%= link_to 'Back', cocktails_path %>
 </div>
-
+</div>
+<%= link_to 'Back', cocktails_path, class: "btn btn-ghost" %>
 </div>

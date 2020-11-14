@@ -1,3 +1,5 @@
+<%= render 'navbar', cocktail: @cocktail %>
+
 <div class="container">
 <h1>Comment préparer un <%= @cocktail.name %> ?</h1>
 
@@ -9,9 +11,10 @@
   </div>
 
   <div class="cocktail-recipe">
-    <p>Name: <%= @cocktail.name %></p>
+    <h3><%= @cocktail.name %></h3>
     <br>
     <p>Recipe</p>
+    <hr>
     <ol>
     <% @cocktail.doses.each do |dose| %>
       <li><%= dose.description %> de <%= dose.ingredient.name %>
@@ -23,9 +26,6 @@
   </div>
 </div>
 
-<br>
-
-<br>
 <%= link_to 'Back', cocktails_path, class: "btn btn-ghost" %>
 </div>
 
