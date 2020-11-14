@@ -1,14 +1,45 @@
-.card-category {
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+  padding: 32px;
+  margin-top: 32px;
+}
+
+.card {
   background-size: cover;
   background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   color: white;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 32px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  height: 250px;
+  display: flex;
+}
+
+.card-cocktail {
+  background-color: white;
+  box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  padding: 16px;
+  border-radius: 8px;
+  align-items: center;
+  display: flex;
+  margin: 40px auto;
+}
+
+.cocktail-img {
+  height: 100%;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.cocktail-recipe {
+  text-align: left;
+  padding: 0px 16px;
+  margin: 0px 16px;
 }
